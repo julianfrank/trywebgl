@@ -15,13 +15,11 @@ let r = [[]], g = [[]], b = [[]],
 for (let i = y.min; i < y.max; i++) {
 
     let angleFraction = (i / y.max)
-
     r[i] = Math.round(Math.min(255, 255 * angleFraction))
     g[i] = 0//64 - Math.round(Math.min(64, 64 * angleFraction))
     b[i] = 254 - Math.round(Math.min(255, 255 * angleFraction))
-    let c = `rgb(${r[i]},${g[i]},${b[i]})`
-    console.log(c)
-    drawLine({ sx: x.min, sy: i, ex: x.max, ey: i, c: c })
+
+    drawLine({ sx: x.min, sy: i, ex: x.max, ey: i, c: `rgb(${r[i]},${g[i]},${b[i]})` })
 }
 
 
